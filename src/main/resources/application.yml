@@ -1,0 +1,30 @@
+server:
+  servlet:
+    context-path: '/demo'
+
+spring:
+  redis:
+    port: 6379
+    host: localhost
+
+polls:
+  - name: Cloud Events
+    description: Which event about the cloud would you like to attend?
+    options:
+      - AWS EKS
+      - Google Cloud Anthos
+      - Azure Functions
+      - AWS Lambda
+      - Google Cloud BigQuery
+      - AWS Redshift
+      - AWS Code Pipeline
+    max-selections: 2
+  - name: Container Orchestration Events
+    description: Which event about Kubernetes would you like to attend?
+    options:
+      - Kubernetes certifications
+      - Kubernetes - AWS vs Google Cloud
+      - Introduction to K8s
+      - K8s - Load Balancing and Networking
+    max-selections: 1
+
