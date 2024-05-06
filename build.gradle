@@ -18,13 +18,46 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
-    implementation group: 'redis.clients', name: 'jedis'
+    implementation 'redis.clients:jedis:3.7.0'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+tasks.register('npm', Exec) {
+    group 'build'
+    dependsOn build
+
+    workingDir "${projectDir}/poll-app"
+
+    commandLine 'npm', 'install'
+    commandLine 'npm', 'run', 'build'
+}
+
+tasks.register('deleteReactAppFolder', Delete) {
+    group 'build'
+    dependsOn npm
+
+    delete "${projectDir}/src/main/resources/react-app"
+}
+
+tasks.register('copyReactApp', Copy) {
+    group 'build'
+    dependsOn deleteReactAppFolder
+
+    def buildDirNpm ="${projectDir}/poll-app/build"
+    def resourcesStatic = "${projectDir}/src/main/resources/react-app"
+
+    from buildDirNpm
+    into resourcesStatic
+
+    doLast {
+        println "Executed!"
+    }
+
 }
 
 
