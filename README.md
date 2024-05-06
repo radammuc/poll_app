@@ -1,6 +1,7 @@
 # poll_app
 
 * Not working properly
+* Works at least in the IDE with branch `v1`
 
 # TODO
 
@@ -16,7 +17,7 @@
 
 ## Gradle
 
-* Add task to build the frontend and copy it into the resources folder
+* Add task to build the frontend and copy it into the resources folder (done in branch `v1`)
 
 # AWS
 
