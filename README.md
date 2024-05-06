@@ -1,7 +1,6 @@
 # poll_app
 
-* Not working properly
-* see branch `v1` for a version that works at least in the IDE
+* Works at least in the IDE
 
 ## TODO
 
@@ -17,7 +16,7 @@
 
 ### Gradle
 
-* Add task to build the frontend and copy it into the resources folder (done in branch `vi`)
+* Fix: bootJar does not work properly for the html/js content
 
 ### AWS
 
