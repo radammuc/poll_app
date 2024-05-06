@@ -1,0 +1,24 @@
+.collapsed {
+    display: none;
+}
+
+.event {
+    text-align: left;
+    color: lightblue;
+}
+
+.event-not-selected {
+    color: gray;
+}
+
+#footer {
+    text-align: start;
+    font-style: italic;
+    position:absolute;
+    width:100%;
+    margin-left: 3em;
+    margin-bottom: 1em;
+    bottom:0;
+ }
+ 
+ 
