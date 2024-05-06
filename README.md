@@ -1,24 +1,25 @@
 # poll_app
 
 * Not working properly
+* see branch `v1` for a version that works at least in the IDE
 
-# TODO
+## TODO
 
-## React
-
-* Add test cases
-* Fix possible bugs
-
-## Spring
+### React
 
 * Add test cases
 * Fix possible bugs
 
-## Gradle
+### Spring
 
-* Add task to build the frontend and copy it into the resources folder
+* Add test cases
+* Fix possible bugs
 
-# AWS
+### Gradle
+
+* Add task to build the frontend and copy it into the resources folder (done in branch `vi`)
+
+### AWS
 
 * Configure as Beanstalk app
 * Configure in ECS
