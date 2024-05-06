@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: 'demo'
+    context-path: /
 
 spring:
   resources:
