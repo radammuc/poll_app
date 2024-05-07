@@ -1,7 +1,5 @@
 # poll_app
 
-* Works at least in the IDE
-
 ## TODO
 
 ### React
