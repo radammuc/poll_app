@@ -4,7 +4,9 @@
 
 # Gradle
 
-`gradle copyReactApp`
+Currently used version of Spring Boot (2.6.4) does not support Gradle 8!
+
+`./gradlew clean copyReactApp bootJar`
 
 
 
