@@ -5,9 +5,10 @@ plugins {
 }
 
 group = 'de.radammuc'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.2-SNAPSHOT'
 
 sourceCompatibility = '17'
+targetCompatibility = '17'
 
 repositories {
     mavenCentral()
@@ -56,25 +57,20 @@ tasks.register('copyReactApp', Copy) {
     dependsOn deleteReactAppFolder
 
     def buildDirNpm = "${projectDir}/poll-app/build"
-    def resourcesStatic = "${projectDir}/src/main/resources/react-app"
+    def resourcesPublic = "${projectDir}/src/main/resources/public"
 
     from buildDirNpm
-    into resourcesStatic
-
-    doLast {
-        println "Executed!"
-    }
+    into resourcesPublic
 }
 
-tasks.named("build") {
-    finalizedBy("copyReactApp")
-}
-
-clean.doFirst {
+tasks.register('cleanReactApp') {
+    group 'build'
     delete "${projectDir}/poll-app/node_modules"
     delete "${projectDir}/poll-app/build"
-    delete "${projectDir}/src/main/resources/react-app"
+    delete "${projectDir}/src/main/resources/public"
 }
 
-
-
+tasks.named('classes') {
+    // TODO this would fix the 'bootJar problem' but would also always force a react build for other tasks
+    // dependsOn copyReactApp
+}
